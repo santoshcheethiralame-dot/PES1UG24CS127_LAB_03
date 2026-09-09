@@ -30,16 +30,16 @@
 
 ## Interfaces
 
-| Consumer (socket) | Interface | Provider (ball) | Transport |
+| Requester (socket) | Interface | Provider (ball) | Protocol |
 |---|---|---|---|
-| User Interface | `OrderService` | Order Manager | in-process API |
-| Order Manager | `PaymentProcessing` *(given)* | Payment Service | API call |
-| Order Manager | `ReceiptPrinting` | Receipt Printer | API call |
-| Order Manager | `MenuData` | Menu & Pricing Data Store | DB query |
-| Payment Service | `CardGateway` | Card Payment Gateway *(external)* | HTTPS / TLS |
-| Receipt Printer | `PrinterHardware` | Thermal Printer *(external device)* | USB / ESC-POS |
+| User Interface | Order Interface | Order Manager | «local call» |
+| Order Manager | Payment Interface *(given)* | Payment Service | «API call» |
+| Order Manager | Receipt Interface | Receipt Printer | «API call» |
+| Order Manager | Database Interface | Menu & Pricing Data Store | «SQL query» |
+| Payment Service | Card Network | Card Payment Gateway *(external)* | «HTTPS/TLS» |
+| Receipt Printer | Printer Hardware | Thermal Printer *(external device)* | «USB · ESC/POS» |
 
-Four interfaces are strictly between components; two cross the kiosk boundary to external hardware / systems.
+Four interfaces are strictly between components (meets the ≥4 requirement); two more cross the kiosk boundary to the external gateway and printer. A socket gripping a ball is an assembly connector — the requester holds the socket, so requests flow socket → ball.
 
 ## Why Layered
 

@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1400" height="820" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="700" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1f2d3d">Self-Service Coffee Kiosk System — Layered Architecture</text>
+  <text x="700" y="56" text-anchor="middle" font-size="13.5" fill="#5a6b7b">UML Component Diagram · PES1UG24CS127 · SE Lab 3</text>
+
+  <!-- Kiosk deployment boundary -->
+  <rect x="198" y="74" width="1004" height="654" rx="14" fill="none" stroke="#8a94a0" stroke-width="1.5" stroke-dasharray="9 6"/>
+  <text x="216" y="95" font-size="13" font-style="italic" fill="#6b7684">&#171;device&#187; Coffee Kiosk  (single deployable unit)</text>
+
+  <!-- ===================== PRESENTATION LAYER ===================== -->
+  <rect x="224" y="104" width="952" height="150" rx="8" fill="#eef4fb" stroke="#9db4cc" stroke-width="1.4"/>
+  <path d="M224,124 h150 v-20 h-142 a8,8 0 0 0 -8,8 z" fill="#dfeaf6" stroke="#9db4cc" stroke-width="1.4"/>
+  <text x="237" y="119" font-size="13" font-weight="700" fill="#2f4f6f">Presentation Layer</text>
+
+  <!-- Legend (in the empty left half of the Presentation band) -->
+  <g>
+    <rect x="244" y="132" width="300" height="112" rx="6" fill="#fcfdfe" stroke="#c7ced6" stroke-width="1.1"/>
+    <text x="258" y="151" font-size="12" font-weight="700" fill="#1f2d3d">Legend</text>
+    <circle cx="268" cy="169" r="6.5" fill="#ffffff" stroke="#37474f" stroke-width="1.6"/>
+    <line x1="274.5" y1="169" x2="292" y2="169" stroke="#37474f" stroke-width="1.6"/>
+    <text x="300" y="173" font-size="10.5" fill="#3a4753">provided interface (ball) — service offered</text>
+    <path d="M279,185 a10,10 0 0 1 0,20" fill="none" stroke="#37474f" stroke-width="1.6"/>
+    <line x1="268" y1="195" x2="279" y2="195" stroke="#37474f" stroke-width="1.6"/>
+    <text x="300" y="199" font-size="10.5" fill="#3a4753">required interface (socket) — service needed</text>
+    <rect x="266" y="212" width="30" height="13" rx="2" fill="#f3f4f6" stroke="#8a94a0" stroke-width="1.3" stroke-dasharray="5 3"/>
+    <text x="300" y="222" font-size="10.5" fill="#3a4753">external system / device (outside kiosk)</text>
+    <text x="258" y="240" font-size="10.5" fill="#3a4753">solid line = assembly connector / service call</text>
+  </g>
+
+  <!-- UI Component -->
+  <g>
+    <rect x="590" y="128" width="252" height="100" rx="4" fill="#fbfdff" stroke="#3b6ea5" stroke-width="1.6"/>
+    <rect x="808" y="138" width="20" height="15" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="804" y="141" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="804" y="149" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <text x="716" y="168" text-anchor="middle" font-size="11" fill="#5a6b7b">&#171;component&#187;</text>
+    <text x="716" y="189" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">User Interface</text>
+    <text x="716" y="209" text-anchor="middle" font-size="10.5" fill="#6b7684">touch menu · order summary · card prompt</text>
+  </g>
+
+  <!-- ===================== BUSINESS LAYER ===================== -->
+  <rect x="224" y="274" width="952" height="290" rx="8" fill="#eef7f0" stroke="#9dc7ab" stroke-width="1.4"/>
+  <path d="M224,294 h150 v-20 h-142 a8,8 0 0 0 -8,8 z" fill="#ddefe2" stroke="#9dc7ab" stroke-width="1.4"/>
+  <text x="237" y="289" font-size="13" font-weight="700" fill="#2f5f42">Business Layer</text>
+
+  <!-- interface labels sitting in the clear zone above the business components -->
+  <text x="540" y="352" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2d3d">PaymentProcessing</text>
+  <text x="540" y="367" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7684">&#171;API call&#187; · given</text>
+  <text x="892" y="352" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2d3d">ReceiptPrinting</text>
+  <text x="892" y="367" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7684">&#171;API call&#187;</text>
+  <text x="207" y="352" text-anchor="middle" font-size="11.5" font-weight="600" fill="#1f2d3d">CardGateway</text>
+  <text x="207" y="367" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7684">&#171;HTTPS/TLS&#187;</text>
+  <text x="1193" y="352" text-anchor="middle" font-size="11.5" font-weight="600" fill="#1f2d3d">PrinterHardware</text>
+  <text x="1193" y="367" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7684">&#171;USB / ESC-POS&#187;</text>
+
+  <!-- Order Manager (given) -->
+  <g>
+    <rect x="590" y="378" width="252" height="116" rx="4" fill="#fbfdff" stroke="#3b6ea5" stroke-width="1.6"/>
+    <rect x="808" y="388" width="20" height="15" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="804" y="391" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="804" y="399" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <text x="716" y="406" text-anchor="middle" font-size="11" fill="#5a6b7b">&#171;component&#187;</text>
+    <text x="716" y="427" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Order Manager</text>
+    <text x="716" y="446" text-anchor="middle" font-size="10.5" fill="#6b7684">build order · price · total ·</text>
+    <text x="716" y="461" text-anchor="middle" font-size="10.5" fill="#6b7684">orchestrate pay + print + save</text>
+    <text x="716" y="481" text-anchor="middle" font-size="9.5" font-style="italic" fill="#93862f">given</text>
+  </g>
+
+  <!-- Payment Service (given) -->
+  <g>
+    <rect x="256" y="378" width="238" height="116" rx="4" fill="#fbfdff" stroke="#3b6ea5" stroke-width="1.6"/>
+    <rect x="460" y="388" width="20" height="15" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="456" y="391" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="456" y="399" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <text x="375" y="406" text-anchor="middle" font-size="11" fill="#5a6b7b">&#171;component&#187;</text>
+    <text x="375" y="427" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Payment Service</text>
+    <text x="375" y="446" text-anchor="middle" font-size="10.5" fill="#6b7684">card reader · authorize ·</text>
+    <text x="375" y="461" text-anchor="middle" font-size="10.5" fill="#6b7684">approve / decline + txn id</text>
+    <text x="375" y="481" text-anchor="middle" font-size="9.5" font-style="italic" fill="#93862f">given</text>
+  </g>
+
+  <!-- Receipt Printer -->
+  <g>
+    <rect x="908" y="378" width="238" height="116" rx="4" fill="#fbfdff" stroke="#3b6ea5" stroke-width="1.6"/>
+    <rect x="1112" y="388" width="20" height="15" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="1108" y="391" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="1108" y="399" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <text x="1027" y="406" text-anchor="middle" font-size="11" fill="#5a6b7b">&#171;component&#187;</text>
+    <text x="1027" y="427" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Receipt Printer</text>
+    <text x="1027" y="446" text-anchor="middle" font-size="10.5" fill="#6b7684">format receipt · send to printer ·</text>
+    <text x="1027" y="461" text-anchor="middle" font-size="10.5" fill="#6b7684">report status (paper-out)</text>
+  </g>
+
+  <!-- ===================== DATA LAYER ===================== -->
+  <rect x="224" y="584" width="952" height="120" rx="8" fill="#faf3ee" stroke="#d9b79d" stroke-width="1.4"/>
+  <path d="M224,604 h130 v-20 h-122 a8,8 0 0 0 -8,8 z" fill="#f0e1d6" stroke="#d9b79d" stroke-width="1.4"/>
+  <text x="237" y="599" font-size="13" font-weight="700" fill="#7a5236">Data Layer</text>
+
+  <!-- Data Store -->
+  <g>
+    <rect x="576" y="612" width="280" height="80" rx="4" fill="#fbfdff" stroke="#3b6ea5" stroke-width="1.6"/>
+    <rect x="822" y="622" width="20" height="15" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="818" y="625" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <rect x="818" y="633" width="8" height="4" fill="#e8eef6" stroke="#3b6ea5" stroke-width="1.3"/>
+    <text x="716" y="637" text-anchor="middle" font-size="11" fill="#5a6b7b">&#171;component&#187;</text>
+    <text x="716" y="658" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Menu &amp; Pricing Data Store</text>
+    <text x="716" y="677" text-anchor="middle" font-size="10.5" fill="#6b7684">menu · sizes · prices · order history</text>
+  </g>
+
+  <!-- ===================== EXTERNAL SYSTEMS ===================== -->
+  <g>
+    <rect x="34" y="390" width="150" height="92" rx="4" fill="#f3f4f6" stroke="#8a94a0" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="109" y="416" text-anchor="middle" font-size="10.5" fill="#5a6b7b">&#171;external system&#187;</text>
+    <text x="109" y="435" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2d3d">Card Payment</text>
+    <text x="109" y="452" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2d3d">Gateway</text>
+    <text x="109" y="470" text-anchor="middle" font-size="10" fill="#6b7684">bank / acquirer</text>
+  </g>
+  <g>
+    <rect x="1216" y="390" width="150" height="92" rx="4" fill="#f3f4f6" stroke="#8a94a0" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="1291" y="420" text-anchor="middle" font-size="10.5" fill="#5a6b7b">&#171;device&#187;</text>
+    <text x="1291" y="440" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2d3d">Thermal Printer</text>
+    <text x="1291" y="460" text-anchor="middle" font-size="10" fill="#6b7684">receipt hardware</text>
+  </g>
+
+  <!-- ===================== ASSEMBLY CONNECTORS (ball + socket) ===================== -->
+  <!-- geometry helper: ball r=9 open circle on a stalk from the PROVIDER; socket = half-circle cup on a stalk from the CONSUMER, opening toward the ball -->
+
+  <!-- 1. UI (consumer)  to OrderService--> Order Manager (provider) : vertical -->
+  <line x1="716" y1="228" x2="716" y2="292" stroke="#37474f" stroke-width="1.6"/>            <!-- UI stalk down -->
+  <path d="M704,292 a12,12 0 0 0 24,0" fill="none" stroke="#37474f" stroke-width="1.8"/>       <!-- socket cup opening down -->
+  <line x1="716" y1="378" x2="716" y2="330" stroke="#37474f" stroke-width="1.6"/>            <!-- OM stalk up -->
+  <circle cx="716" cy="321" r="9" fill="#ffffff" stroke="#37474f" stroke-width="1.8"/>        <!-- ball -->
+  <text x="729" y="270" font-size="12" font-weight="600" fill="#1f2d3d">OrderService</text>
+  <text x="729" y="285" font-size="10" font-style="italic" fill="#6b7684">&#171;in-process API&#187;</text>
+
+  <!-- 2. Order Manager (consumer)  to PaymentProcessing--> Payment Service (provider) : horizontal -->
+  <line x1="494" y1="418" x2="524" y2="418" stroke="#37474f" stroke-width="1.6"/>            <!-- PS stalk right -->
+  <circle cx="533" cy="418" r="9" fill="#ffffff" stroke="#37474f" stroke-width="1.8"/>        <!-- ball -->
+  <line x1="590" y1="418" x2="560" y2="418" stroke="#37474f" stroke-width="1.6"/>            <!-- OM stalk left -->
+  <path d="M560,406 a12,12 0 0 0 0,24" fill="none" stroke="#37474f" stroke-width="1.8"/>       <!-- socket cup opening left -->
+
+  <!-- 3. Order Manager (consumer)  to ReceiptPrinting--> Receipt Printer (provider) : horizontal -->
+  <line x1="908" y1="418" x2="878" y2="418" stroke="#37474f" stroke-width="1.6"/>            <!-- RP stalk left -->
+  <circle cx="869" cy="418" r="9" fill="#ffffff" stroke="#37474f" stroke-width="1.8"/>        <!-- ball -->
+  <line x1="842" y1="418" x2="872" y2="418" stroke="#37474f" stroke-width="1.6"/>            <!-- OM stalk right -->
+  <path d="M842,406 a12,12 0 0 1 0,24" fill="none" stroke="#37474f" stroke-width="1.8"/>       <!-- socket cup opening right -->
+
+  <!-- 4. Order Manager (consumer)  to MenuData--> Data Store (provider) : vertical -->
+  <line x1="716" y1="494" x2="716" y2="536" stroke="#37474f" stroke-width="1.6"/>            <!-- OM stalk down -->
+  <path d="M704,536 a12,12 0 0 0 24,0" fill="none" stroke="#37474f" stroke-width="1.8"/>       <!-- socket cup opening down -->
+  <line x1="716" y1="612" x2="716" y2="566" stroke="#37474f" stroke-width="1.6"/>            <!-- DS stalk up -->
+  <circle cx="716" cy="557" r="9" fill="#ffffff" stroke="#37474f" stroke-width="1.8"/>        <!-- ball -->
+  <text x="729" y="520" font-size="12" font-weight="600" fill="#1f2d3d">MenuData</text>
+  <text x="729" y="535" font-size="10" font-style="italic" fill="#6b7684">&#171;DB query&#187;</text>
+
+  <!-- 5. Payment Service (consumer)  to CardGateway--> Card Payment Gateway (provider) : horizontal -->
+  <line x1="184" y1="418" x2="214" y2="418" stroke="#37474f" stroke-width="1.6"/>            <!-- gateway stalk right -->
+  <circle cx="223" cy="418" r="8.5" fill="#ffffff" stroke="#37474f" stroke-width="1.8"/>      <!-- ball -->
+  <line x1="256" y1="418" x2="234" y2="418" stroke="#37474f" stroke-width="1.6"/>            <!-- PS stalk left -->
+  <path d="M234,407 a11,11 0 0 0 0,22" fill="none" stroke="#37474f" stroke-width="1.8"/>       <!-- socket cup opening left -->
+
+  <!-- 6. Receipt Printer (consumer)  to PrinterHardware--> Thermal Printer (provider) : horizontal -->
+  <line x1="1216" y1="418" x2="1186" y2="418" stroke="#37474f" stroke-width="1.6"/>          <!-- printer stalk left -->
+  <circle cx="1177" cy="418" r="8.5" fill="#ffffff" stroke="#37474f" stroke-width="1.8"/>    <!-- ball -->
+  <line x1="1146" y1="418" x2="1168" y2="418" stroke="#37474f" stroke-width="1.6"/>          <!-- RP stalk right -->
+  <path d="M1168,407 a11,11 0 0 1 0,22" fill="none" stroke="#37474f" stroke-width="1.8"/>     <!-- socket cup opening right -->
+
+  <!-- Flow note -->
+  <text x="1176" y="720" text-anchor="end" font-size="10.5" font-style="italic" fill="#8a94a0">Flow:  touch selection &#8594; Order Manager prices &amp; totals &#8594; Payment authorizes &#8594; Receipt prints &#8594; order saved</text>
+</svg>
